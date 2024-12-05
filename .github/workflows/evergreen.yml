@@ -1,0 +1,26 @@
+name: Weekly dependabot checks
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '2 1 * * *'  # Runs at 01:02 UTC every day
+
+permissions:
+  issues: write
+  contents: write
+  pull-requests: write
+
+jobs:
+  evergreen:
+    name: evergreen
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run evergreen action
+        uses: github/evergreen@v1
+        env:
+          GH_TOKEN: ${{ secrets.EVERGREEN_TOKEN }}
+          ORGANIZATION: your-org-name
+          # Optional configurations
+          EXCLUDED_REPOSITORIES: "repo1,repo2"
+          DEPENDENCIES_LABEL: "dependencies"
+          BASE_BRANCH: "main"

@@ -1,0 +1,24 @@
+{
+    "name": "dependency-management-example",
+    "version": "1.0.0",
+    "description": "Example project demonstrating Dependabot and Evergreen setup",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "dependabot",
+      "evergreen",
+      "dependencies"
+    ],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+      "jest": "^29.0.0",
+      "eslint": "^8.0.0"
+    },
+    "dependencies": {
+      "express": "^4.18.0",
+      "lodash": "^4.17.21"
+    }
+  }
